@@ -1,0 +1,17 @@
+{
+	"assetsJs": [
+		"./src/assets/js/**/*.js"
+	],
+	"assetsCss": [
+		"./src/assets/css/**/*.css"
+	],
+	"assetsFonts": [
+		
+	],
+	"appJs": [
+		"./src/es6/*.js"
+	],
+	"appScss": [
+		"./src/scss/**/*.scss"
+	]
+}

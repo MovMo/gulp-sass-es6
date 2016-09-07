@@ -1,0 +1,149 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+body{
+	margin: 0;
+	overflow: hidden;
+    font-size: 0.28rem;
+    font-family: SimHei;
+    color: #595959;
+}
+ul,h1,h2,h3,h4,h5,h6,p,input,form,dl,dt,dd,span,i,header,nav,a,li,em,font,b,div,textarea,figure,figcaption,dialog,menu,menuitem,progress,meter,details,aside,header,main,footer{
+	margin: 0;
+	padding: 0;
+}
+span,a,font,i,em,b,dl,dd,dt,input,textareaarticle,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary,button,select,textarea{
+	display: block;
+}
+input,button,select,textarea{
+    border: 0;
+    border-radius: 0;
+    /*解决IOS下表单元素圆角问题*/
+   -webkit-appearance: none;
+   outline: 0!important;
+   font-family: SimHei;
+}
+textarea{
+	resize: none;
+}
+img{
+    border: 0;
+    vertical-align: top;
+}
+i,em{
+	display: inline-block;
+	font-style: normal;
+}
+a{
+    /*取消a标签手指按下时出现的黑色遮罩层*/
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: #373737;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    -webkit-touch-callout: none;
+}
+a:active,a:hover{
+	outline-width: 0;
+}
+li{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6,b{
+	font-weight: normal;
+	color: #595959;
+}
+hr{
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clear{
+	zoom: 1;
+}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/*通用移动布局*/
+.app{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: .88rem;
+	text-align: center;
+	padding: 0 .26rem;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #D7D7D7;
+}
+.header .header_icon{
+	height: .88rem;
+	line-height: .88rem;
+	width: .88rem;
+	z-index: 100;
+	position: relative;
+}
+.header .return{
+	background: url(../img/back.png) no-repeat;
+	background-position: left center;
+	background-size: .22rem .42rem;
+}
+.header .text{
+	line-height: .88rem;
+	color: #FFFFFF;
+	z-index: 100;
+	position: relative;
+}
+.header .header_title{
+	width: 100%;
+	height: .88rem;
+	line-height: .88rem;
+	font-size: .32rem;
+	color: #535353;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.main{
+	position: absolute;
+	top: .9rem;
+	bottom: .9rem;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	background-color: #FFFFFF;
+}
+
+
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: .88rem;
+	border-top: 1px solid #D2D2D2;
+	text-align: center;
+}
+
+

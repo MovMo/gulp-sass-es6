@@ -1,0 +1,18 @@
+$colors: #90f310 #f4f4f4 #d2d2d2;
+
+@function pany ($rem) {
+    @if $rem == 1px{
+        @return $rem;
+    }
+    @return $rem / 100;
+}
+
+.index_app{
+    
+    .main{
+        bottom: 0;
+        background-color: nth($colors, 2);
+        text-align: center;
+        line-height: pany(100rem);
+    }
+}
