@@ -1,18 +1,110 @@
-$colors: #90f310 #f4f4f4 #d2d2d2;
-
-@function pany ($rem) {
-    @if $rem == 1px{
-        @return $rem;
-    }
-    @return $rem / 100;
+$bgArr: ('../images/bg-page1.png', '../images/bg-page2.png', '../images/bg-page3.png', '../images/bg-page4.png', '../images/bg-page5.png');
+@mixin assetWH($w: 100%, $h: 100%) {
+    width: $w;
+    height: $h;
 }
 
-.index_app{
+.page {
+    width: 100%;
+    height: 100%;
     
-    .main{
-        bottom: 0;
-        background-color: nth($colors, 2);
-        text-align: center;
-        line-height: pany(100rem);
+    @for $i from 1 through length($bgArr) {
+        .swiper-slide:nth-of-type(#{$i}) {
+            background: url(nth($bgArr, $i)) no-repeat;
+            background-size: 100% 100%;
+        }
     }
+    
+    .swiper-slide{
+        position: relative;
+    }
+    @at-root .swiper-slide{
+        .dev-box {
+            position: absolute;
+            top: 3.03rem;
+            bottom: 1.99rem;
+            left: 0;
+            right: 0;
+            padding: 0 .36rem;
+            
+            .dev-list{
+                width: 100%;
+                height: 1.7rem;
+                padding: .1rem;
+                box-sizing: border-box;
+                border-bottom: 2px solid #FFFFFF;
+                
+                &:last-of-type{
+                  border-bottom: none;  
+                }
+                .details{
+                    @include assetWH;
+                    position: relative;
+                    
+                    img{
+                        @include assetWH;
+                    }
+                    a{
+                        position: absolute;
+                        right: .2rem;
+                        bottom: -.08rem;
+                        width: 1.34rem;
+                        height: .4rem;
+                        background: url(../images/details.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+        }
+        .img-box{
+            background-color: #ff3139;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0 .36rem;
+            
+            .content{
+                padding: .2rem .28rem;
+                
+                .ewm{
+                    width: 1.59rem;
+                    height: 1.59rem;
+                    
+                    img{
+                        @include assetWH;
+                    }
+                }
+                .price{
+                    width: 4.45rem;
+                    height: 1.59rem;
+                    position: relative;
+                    
+                    a{
+                       position: absolute; 
+                    }
+                    .price-img{
+                        @include assetWH;
+                        
+                        img{
+                            @include assetWH;
+                        }
+                    }
+                    
+                    .purchase{
+                        bottom: -0.1rem;
+                        right: 0;
+                        width: 2.04rem;
+                        height: .53rem;
+                        img {
+                            @include assetWH;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }
+

@@ -1,9 +1,11 @@
 {
 	"assetsJs": [
-		"./src/assets/js/**/*.js"
+		"./src/assets/js/*.js",
+		"./src/assets/swiper/*.js"
 	],
 	"assetsCss": [
-		"./src/assets/css/**/*.css"
+		"./src/assets/css/*.css",
+		"./src/assets/swiper/*.css"
 	],
 	"assetsFonts": [
 		

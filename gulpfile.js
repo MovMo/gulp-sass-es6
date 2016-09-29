@@ -16,7 +16,7 @@
 	
 	//执行任务
 	gulp.task('default', (callback) => {
-		return runSequence(['clean'], ['build'], ['serve', 'watch'], callback);
+		return runSequence(['clean'], ['build'], ['serve', 'watch', 'sassWatch'], callback);
 	});
 	
 	gulp.task('build', (callback) => {
@@ -69,6 +69,11 @@
 	    return gulp.src(['./src/images/**/*.png', './src/images/**/*.jpg', './src/images/**/*.gif']).pipe(gulp.dest('./dist/images'));
 	});
 	
+	//拷贝font字体文件
+	gulp.task('copyFont', () => {
+	    return gulp.src(['./src/assets/font/*.*']).pipe(gulp.dest('./dist/assets/font'));
+	});
+	
 	//配置访问前端文件服务器
 	gulp.task('serve', () => {
 	    return browserSync.init({
@@ -79,9 +84,14 @@
 	    });
 	});
 	
+	// 监控sass文件
+	gulp.task('sassWatch', () => {
+		gulp.watch('./src/scss/*.scss',['sassfile', 'reload']);
+	});
+	
 	//配置当文件有所改动，页面自动刷新
 	gulp.task('watch', () => {
-	    return gulp.watch('./src/**/*.*', ['reload']);
+	    return gulp.watch('src/**/*.*', ['reload']);
 	});
 	  
 	gulp.task('reload', (callback) => {
